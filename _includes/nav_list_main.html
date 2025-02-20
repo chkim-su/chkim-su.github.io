@@ -1,0 +1,69 @@
+<nav class="nav__list">
+  <input id="ac-toc" name="accordion-toc" type="checkbox" />
+  <label for="ac-toc">{{ site.data.ui-text[site.locale].menu_label }}</label>
+  <ul class="nav__items" id="category_tag_menu">
+    <!-- 전체 글 수 -->
+    <li>
+      <span style="font-family:'Cafe24Oneprettynight';">전체 글 수</span>
+      <span style="font-family:'Coming Soon';">{{ site.posts | size }}</span>
+      <span style="font-family:'Cafe24Oneprettynight';">개</span>
+    </li>
+    
+    <!-- 논문 리뷰 -->
+    <li>
+      <span class="nav__sub-title">논문 리뷰</span>
+      <ul>
+        <li>
+          <a href="/categories/논문리뷰" class="">
+            전체 ({{ site.posts | where_exp:"post", "post.categories contains '논문 리뷰'" | size }})
+          </a>
+        </li>
+        <li>
+          <a href="/categories/논문리뷰/llm" class="">
+            LLM ({{ site.posts | where_exp:"post", "post.categories contains '논문 리뷰' and post.categories contains 'LLM'" | size }})
+          </a>
+        </li>
+        <li>
+          <a href="/categories/논문리뷰/diffusion" class="">
+            Diffusion ({{ site.posts | where_exp:"post", "post.categories contains '논문 리뷰' and post.categories contains 'Diffusion'" | size }})
+          </a>
+        </li>
+      </ul>
+    </li>
+    
+    <!-- 취미 개발 -->
+    <li>
+      <span class="nav__sub-title">취미 개발</span>
+      <ul>
+        <li>
+          <a href="/categories/hobby" class="">
+            전체 ({{ site.posts | where_exp:"post", "post.categories contains '취미 개발'" | size }})
+          </a>
+        </li>
+        <li>
+          <a href="/categories/hobby/tutor-assist.md" class="">
+            수업 관리 프로그램 ({{ site.posts | where_exp:"post", "post.categories contains '취미 개발' and post.categories contains '수업 관리 프로그램'" | size }})
+          </a>
+        </li>
+      </ul>
+    </li>
+
+    
+    <!-- 공부 일지 -->
+    <li>
+      <span class="nav__sub-title">공부 일지</span>
+      <ul>
+        <li>
+          <a href="/categories/study-note" class="">
+            전체 ({{ site.posts | where_exp:"post", "post.categories contains '공부 일지'" | size }})
+          </a>
+        </li>
+        <li>
+          <a href="/categories/hobby/statics" class="">
+            수업 관리 프로그램 ({{ site.posts | where_exp:"post", "post.categories contains '공부 일지' and post.categories contains '거리 계산 척도'" | size }})
+          </a>
+        </li>
+      </ul>
+    </li>
+  </ul>
+</nav>
